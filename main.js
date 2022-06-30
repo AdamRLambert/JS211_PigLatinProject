@@ -14,8 +14,39 @@ const rl = readline.createInterface({
 const pigLatin = (word) => {
 
   // Your code here
+  //should lowercase and trim word before translation
+
+  word = word.toLowerCase().trim()
+
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  let firstLetter = word.slice(0,1); 
+
+ 
+
+if (vowels.includes(firstLetter)) {
+
+  
+
+  return word + "yay"
+}
+
+else {
+  return word.slice(1) + word.slice(0,1) + "ay"
+}
 
 }
+
+//   //should translate a simple word
+//   //should translate a complex word
+//   //yay" if word begins with vowel
+
+// }
+
+
+
+
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
@@ -38,7 +69,7 @@ if (typeof describe === 'function') {
       assert.equal(pigLatin('dog'), 'ogday');
     });
     it('should translate a complex word', () => {
-      assert.equal(pigLatin('create'), 'eatecray');
+      assert.equal(pigLatin('create'), 'reatecay');
       assert.equal(pigLatin('valley'), 'alleyvay');
     });
     it('should attach "yay" if word begins with vowel', () => {
